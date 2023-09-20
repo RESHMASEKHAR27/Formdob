@@ -1,0 +1,60 @@
+﻿@model User
+
+@{
+    ViewData["Title"] = "User Form";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+@using (Html.BeginForm("Submit", "Home", FormMethod.Post))
+{
+    @Html.ValidationSummary(true)
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name)
+        @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Hobbies)
+        @Html.ListBoxFor(model => model.Hobbies, new SelectList(new List<string> { "Singing", "Dancing", "Reading" }), new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DateOfBirth)
+        @Html.TextBoxFor(model => model.DateOfBirth, new { @class = "form-control", @id = "dob" })
+        <span id="dob-validation" style="color: red;"></span>
+    </div>
+
+    <button type="submit" name="submitButton" value="below18">I am below 18</button>
+    <button type="submit" name="submitButton" value="above18">I am above 18</button>
+    @*<input type="submit" name="submitButton" value="Submit" />*@
+}
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#dob').change(function () {
+            var dob = new Date($('#dob').val());
+            var currentDate = new Date();
+            var age = currentDate.getFullYear() - dob.getFullYear();
+
+            if (currentDate < new Date(currentDate.getFullYear(), dob.getMonth(), dob.getDate())) {
+                age--;
+            }
+
+            if (age < 18) {
+                $('#dob-validation').text('You must be 18 or above to continue.');
+            } else {
+                $('#dob-validation').text('');
+            }
+        });
+    });
+</script>

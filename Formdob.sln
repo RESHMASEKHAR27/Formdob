@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33723.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formdob", "Formdob.csproj", "{921D1AD1-AA92-4F52-A3E1-F3513F651CAC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{921D1AD1-AA92-4F52-A3E1-F3513F651CAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{921D1AD1-AA92-4F52-A3E1-F3513F651CAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{921D1AD1-AA92-4F52-A3E1-F3513F651CAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{921D1AD1-AA92-4F52-A3E1-F3513F651CAC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FF6C1524-19AE-4105-90D5-BA02EE5E7B5D}
+	EndGlobalSection
+EndGlobal
